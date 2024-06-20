@@ -78,22 +78,13 @@ export default function App() {
           </View>
         </View>
 
-      
         <View style={styles.searchContainer}>
-          <View style={styles.inputContainer}>
-            <MaterialCommunityIcons
-              name="magnify"
-              color="#FFF"
-              size={20}
-              style={styles.searchIcon}
-            />
-            <TextInput
-              style={styles.input}
-              placeholder="Find amazing events"
-              placeholderTextColor="#888"
-            />
-          </View>
+          <TouchableOpacity style={styles.findEventsButton}>
+            <MaterialCommunityIcons name="magnify" color="#000" size={20} />
+            <Text style={styles.findEventsButtonText}>Find Events</Text>
+          </TouchableOpacity>
           <TouchableOpacity style={styles.createButton}>
+            <MaterialCommunityIcons name="plus" color="#000" size={20} />
             <Text style={styles.createButtonText}>Create</Text>
           </TouchableOpacity>
         </View>
@@ -228,27 +219,22 @@ const styles = StyleSheet.create({
     marginTop: 20,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center', // Center horizontally
   },
-  inputContainer: {
+  findEventsButton: {
+    backgroundColor: "#FFC42B",
     flexDirection: "row",
     alignItems: "center",
-    borderWidth: 1,
-    borderColor: "#FFC42B",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
     borderRadius: 5,
-    paddingHorizontal: 10,
-    width: 250,
+    marginRight: 10,
   },
-  searchIcon: {
-    marginLeft: 5,
-    marginRight: 5,
-  },
-  input: {
-    height: 40,
-    backgroundColor: "#000",
-    color: "#FFF",
+  findEventsButtonText: {
+    color: "#000",
     fontSize: 16,
-    flex: 1,
-    paddingHorizontal: 10,
+    fontWeight: "600",
+    marginLeft: 5,
   },
   createButton: {
     backgroundColor: "#FFC42B",
@@ -257,14 +243,12 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 15,
     borderRadius: 5,
-    marginLeft: 10,
-    
   },
-
   createButtonText: {
     color: "#000",
     fontSize: 16,
     fontWeight: "600",
+    marginLeft: 5,
   },
   sectionContainer: {
     flexDirection: "row",
@@ -281,7 +265,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginBottom: 10,
     marginTop: 20, 
   },
   sectionTextChooseEvent: {
