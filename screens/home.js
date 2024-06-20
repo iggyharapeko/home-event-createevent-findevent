@@ -6,7 +6,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 export default function App() {
   const handleViewAllPress = (section) => {
     console.log(`View All ${section} clicked`);
-
   };
 
   const [likedEvents, setLikedEvents] = useState({});
@@ -79,7 +78,7 @@ export default function App() {
           </View>
         </View>
 
-        {/* Search Input */}
+      
         <View style={styles.searchContainer}>
           <View style={styles.inputContainer}>
             <MaterialCommunityIcons
@@ -94,7 +93,11 @@ export default function App() {
               placeholderTextColor="#888"
             />
           </View>
+          <TouchableOpacity style={styles.createButton}>
+            <Text style={styles.createButtonText}>Create</Text>
+          </TouchableOpacity>
         </View>
+
         <View style={styles.sectionContainer}>
           <Text style={styles.sectionText}>Popular Events</Text>
           <TouchableOpacity onPress={() => handleViewAllPress("Popular Events")}>
@@ -223,6 +226,7 @@ const styles = StyleSheet.create({
   },
   searchContainer: {
     marginTop: 20,
+    flexDirection: 'row',
     alignItems: 'center',
   },
   inputContainer: {
@@ -245,6 +249,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     flex: 1,
     paddingHorizontal: 10,
+  },
+  createButton: {
+    backgroundColor: "#FFC42B",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+    borderRadius: 5,
+    marginLeft: 10,
+    
+  },
+
+  createButtonText: {
+    color: "#000",
+    fontSize: 16,
+    fontWeight: "600",
   },
   sectionContainer: {
     flexDirection: "row",
@@ -271,7 +291,6 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     marginTop: 10,
-  
   },
   eventCard: {
     backgroundColor: "#FFF",
@@ -300,9 +319,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#000",
-    marginTop:4,
-    marginRight:4,
-
+    marginTop: 4,
+    marginRight: 4,
   },
   heartLiked: {
     backgroundColor: "#DADADA",
@@ -313,8 +331,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderWidth: 1,
     borderColor: "#000",
-    marginTop:4,
-    marginRight:4, 
+    marginTop: 4,
+    marginRight: 4, 
   },
   eventTitle: {
     fontSize: 16,
@@ -342,7 +360,6 @@ const styles = StyleSheet.create({
   },
   buttonScrollView: {
     marginTop: 10,
-
   },
   buttonContainer: {
     borderWidth: 1,
